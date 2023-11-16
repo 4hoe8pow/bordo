@@ -1,0 +1,144 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = "native"
+}
+
+model Player {
+  id           Int      @id @default(autoincrement())
+  name         String
+  sex          String
+  email        String?
+  height       Int      @db.SmallInt
+  weight       Int?     @db.SmallInt
+  mainPosition String
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt    DateTime @default(now()) @map("updated_at") @db.Timestamp(6)
+  entry        Entry[]
+
+  @@map("d_player")
+}
+
+model Team {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt DateTime @default(now()) @map("updated_at") @db.Timestamp(6)
+  entry     Entry[]
+  oak       Match[]  @relation("Oak")
+  willow    Match[]  @relation("Willow")
+
+  @@map("d_team")
+}
+
+model Championship {
+  id     Int      @id @default(autoincrement())
+  holdOn DateTime @map("hold_on") @db.Date
+  title  String
+  match  Match[]
+
+  @@map("d_championship")
+}
+
+model Match {
+  id             Int          @id @default(autoincrement())
+  sex            String
+  championship   Championship @relation(fields: [championshipId], references: [id])
+  championshipId Int          @map("championship_id")
+  oak            Team         @relation("Oak", fields: [oakId], references: [id])
+  oakId          Int          @map("oak_id")
+  oakScore       Int
+  willow         Team         @relation("Willow", fields: [willowId], references: [id])
+  willowId       Int          @map("willow_id")
+  willowScore    Int
+  nextMatchId    Int?
+  entry          Entry[]
+
+  @@unique([championshipId, oakId, willowId])
+  @@map("d_match")
+}
+
+model Entry {
+  id            Int        @id @default(autoincrement())
+  match         Match      @relation(fields: [matchId], references: [id])
+  matchId       Int
+  uniformNumber Int        @map("uniform_number") @db.SmallInt
+  player        Player     @relation(fields: [playerId], references: [id])
+  playerId      Int        @map("player_id")
+  team          Team       @relation(fields: [teamId], references: [id])
+  teamId        Int        @map("team_id")
+  raid          Raid[]
+  oakIn         InOutLog[] @relation("OakIn")
+  oakOut        InOutLog[] @relation("OakOut")
+  willowIn      InOutLog[] @relation("WillowIn")
+  willowOut     InOutLog[] @relation("WillowOut")
+  tackleBy      Struggle[] @relation("TackleBy")
+  createdAt     DateTime   @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt     DateTime   @default(now()) @map("updated_at") @db.Timestamp(6)
+
+  @@unique([playerId, teamId, matchId])
+  @@map("f_entry")
+}
+
+model Raid {
+  id           Int        @id @default(autoincrement())
+  raider       Entry      @relation(fields: [raiderId], references: [id])
+  raiderId     Int        @map("raider_id")
+  pointFor     Int        @map("point_for") @db.SmallInt
+  pointAgainst Int        @map("point_against") @db.SmallInt
+  doOrDieCount Int        @map("do_or_die_count") @db.SmallInt
+  duration     Int        @db.SmallInt
+  opportunity  Int        @db.SmallInt
+  isBonus      Boolean    @map("is_bonus")
+  createdAt    DateTime   @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt    DateTime   @default(now()) @map("updated_at") @db.Timestamp(6)
+  inOutLog     InOutLog[]
+  struggle     Struggle[]
+
+  @@map("f_raid")
+}
+
+model Struggle {
+  id         Int    @id @default(autoincrement())
+  raid       Raid   @relation(fields: [raidId], references: [id])
+  raidId     Int    @map("raid_id")
+  tackleBy   Entry? @relation("TackleBy", fields: [tackleById], references: [id])
+  tackleById Int?   @map("tackle_by_id")
+  trick      Trick  @relation(fields: [trickCode], references: [code])
+  trickCode  String @map("trick_code")
+
+  @@map("f_struggle")
+}
+
+model InOutLog {
+  id          Int      @id @default(autoincrement())
+  raid        Raid     @relation(fields: [raidId], references: [id])
+  raidId      Int      @map("raid_id")
+  oakIn       Entry?   @relation("OakIn", fields: [oakInId], references: [id])
+  oakInId     Int?     @map("oak_in_id")
+  oakOut      Entry?   @relation("OakOut", fields: [oakOutId], references: [id])
+  oakOutId    Int?     @map("oak_out_id")
+  willowIn    Entry?   @relation("WillowIn", fields: [willowInId], references: [id])
+  willowInId  Int?     @map("willow_in_id")
+  willowOut   Entry?   @relation("WillowOut", fields: [willowOutId], references: [id])
+  willowOutId Int?     @map("willow_out_id")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt   DateTime @default(now()) @map("updated_at") @db.Timestamp(6)
+
+  @@map("f_in_out_log")
+}
+
+model Trick {
+  id          Int        @id @default(autoincrement())
+  code        String     @unique
+  name        String
+  raidSuccess Boolean    @map("raid_success")
+  raid        Struggle[]
+
+  @@map("d_trick")
+}

@@ -4,6 +4,8 @@ import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import Matches from 'src/components/Match/Matches'
 
+import { receive_championship_input_from_ts } from '../../../../lib/aogiri/pkg/aogiri'
+
 export const QUERY = gql`
   query FindMatches($championshipId: Int!) {
     matchesByChampionship(championshipId: $championshipId) {
@@ -32,5 +34,7 @@ export const Failure = ({ error }: CellFailureProps) => (
 export const Success = ({
   matchesByChampionship,
 }: CellSuccessProps<FindMatches>) => {
+
+  receive_championship_input_from_ts(matchesByChampionship)
   return <Matches matchesByChampionship={matchesByChampionship} />
 }

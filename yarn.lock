@@ -7130,6 +7130,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tabler/icons-react@npm:^2.42.0":
+  version: 2.42.0
+  resolution: "@tabler/icons-react@npm:2.42.0"
+  dependencies:
+    "@tabler/icons": 2.42.0
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0
+  checksum: e9255de7152c4f9bac740008da6e9e7238523f85c8d3f57fea042b44087644a95ea8501ca49f798a075d901da2d3f719ee3483ae870783fb15a108b4042198b8
+  languageName: node
+  linkType: hard
+
+"@tabler/icons@npm:2.42.0":
+  version: 2.42.0
+  resolution: "@tabler/icons@npm:2.42.0"
+  checksum: d97c06159109fbec75be39e1a4600cc8755f126682cbeab184eab612ead785dda05fcdbba244272aa834488bd14ce631aa37fd58be1237897b2757d6de0903ce
+  languageName: node
+  linkType: hard
+
 "@testing-library/dom@npm:^8.11.1":
   version: 8.20.1
   resolution: "@testing-library/dom@npm:8.20.1"
@@ -25023,6 +25042,7 @@ __metadata:
     "@redwoodjs/vite": 6.4.0
     "@redwoodjs/web": 6.4.0
     "@rollup/pluginutils": ^5.0.5
+    "@tabler/icons-react": ^2.42.0
     "@types/react": 18.2.14
     "@types/react-dom": 18.2.6
     autoprefixer: ^10.4.16

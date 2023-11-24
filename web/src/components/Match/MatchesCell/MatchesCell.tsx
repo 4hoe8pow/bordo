@@ -34,7 +34,6 @@ export const Failure = ({ error }: CellFailureProps) => (
 export const Success = ({
   matchesByChampionship,
 }: CellSuccessProps<FindMatches>) => {
-
   receive_championship_input_from_ts(matchesByChampionship)
   return <Matches matchesByChampionship={matchesByChampionship} />
 }

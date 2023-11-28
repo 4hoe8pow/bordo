@@ -6,7 +6,6 @@ const ThemeChange = () => {
 
   return (
     <ActionIcon
-      variant="outline"
       color={dark ? 'yellow' : 'blue'}
       onClick={() => toggleColorScheme()}
       title="Toggle color scheme"

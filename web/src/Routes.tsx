@@ -16,8 +16,14 @@ const Routes = () => {
     <Router>
       <Set wrap={MainLayout}>
         <Route path="/" page={HomePage} name="home" />
-        <Route path="/championships" page={ChampionshipChampionshipsPage} name="championships" />
-        <Route path="/championships/{id:Int}" page={MatchMatchesPage} name="matches" prerender />
+        <Route path="/stats" page={StatsPage} name="stats" />
+        <Route path="/scores" page={ScoresPage} name="scores" />
+        <Route path="/standings" page={StandingsPage} name="standings" />
+        <Route path="/teams" page={TeamsPage} name="teams" />
+        <Route path="/schedule" page={SchedulePage} name="schedule" />
+        <Route path="/news" page={NewsPage} name="news" />
+        <Route path="/about" page={AboutPage} name="about" />
+        <Route path="/scores/championships/{id:Int}" page={MatchMatchesPage} name="matches" />
       </Set>
       <Route notfound page={NotFoundPage} />
     </Router>

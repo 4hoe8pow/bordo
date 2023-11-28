@@ -1,6 +1,6 @@
-import { Link, routes } from '@redwoodjs/router'
+import { Grid } from '@mantine/core'
 
-import ThemeChange from 'src/components/ThemeChange/ThemeChange'
+import NavHead from 'src/components/NavHead/NavHead'
 
 type MainLayoutProps = {
   children?: React.ReactNode
@@ -8,25 +8,14 @@ type MainLayoutProps = {
 
 const MainLayout = ({ children }: MainLayoutProps) => {
   return (
-    <>
-      <header>
-        <h1>Redwood Blog</h1>
-        <nav>
-          <ul>
-            <li>
-              <Link to={routes.home()}>Home</Link>
-            </li>
-            <li>
-              <Link to={routes.championships()}>大会</Link>
-            </li>
-            <li>
-              <ThemeChange />
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <main>{children}</main>
-    </>
+    <Grid>
+      <Grid.Col span={12}>
+        <NavHead />
+      </Grid.Col>
+      <Grid.Col span={9.6} offset={1.2}>
+        <main>{children}</main>
+      </Grid.Col>
+    </Grid>
   )
 }
 

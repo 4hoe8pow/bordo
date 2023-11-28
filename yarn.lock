@@ -2644,18 +2644,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@g-loot/react-tournament-brackets@npm:^1.0.30":
-  version: 1.0.30
-  resolution: "@g-loot/react-tournament-brackets@npm:1.0.30"
-  peerDependencies:
-    react: ^18.1.0
-    react-dom: ^18.1.0
-    react-svg-pan-zoom: ^3.10.0
-    styled-components: ^4.1.3
-  checksum: aa153d202127c0b56e7e717544db59a022ce230ff4706b2b56bdaa02c5c4b620803c360a335aab4f4650f80c892e85d5f1ef90bcfed658b0fad51c63443ea8a7
-  languageName: node
-  linkType: hard
-
 "@graphql-codegen/add@npm:4.0.1":
   version: 4.0.1
   resolution: "@graphql-codegen/add@npm:4.0.1"
@@ -7905,14 +7893,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prop-types@npm:*":
-  version: 15.7.10
-  resolution: "@types/prop-types@npm:15.7.10"
-  checksum: 964348d05cdf7399260b3179fbd1462b23d7452dc39fbccb319e54ed6ffafb0a01c0a62c3e6f7c944a635c7a4ad5c99d62c4787c9c4b74e2ec07aebaf6cfedc1
-  languageName: node
-  linkType: hard
-
-"@types/prop-types@npm:^15.7.2":
+"@types/prop-types@npm:*, @types/prop-types@npm:^15.7.2":
   version: 15.7.11
   resolution: "@types/prop-types@npm:15.7.11"
   checksum: e53423cf9d510515ef8b47ff42f4f1b65a7b7b37c8704e2dbfcb9a60defe0c0e1f3cb1acfdeb466bad44ca938d7c79bffdd51b48ffb659df2432169d0b27a132
@@ -7933,21 +7914,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-dom@npm:18.2.17, @types/react-dom@npm:^18.0.0":
+  version: 18.2.17
+  resolution: "@types/react-dom@npm:18.2.17"
+  dependencies:
+    "@types/react": "*"
+  checksum: 33b53078ed7e9e0cfc4dc691e938f7db1cc06353bc345947b41b581c3efe2b980c9e4eb6460dbf5ddc521dd91959194c970221a2bd4bfad9d23ebce338e12938
+  languageName: node
+  linkType: hard
+
 "@types/react-dom@npm:18.2.6":
   version: 18.2.6
   resolution: "@types/react-dom@npm:18.2.6"
   dependencies:
     "@types/react": "*"
   checksum: bd734ca04c52b3c96891a7f9c1139486807dac7a2449fb72e8f8e23018bc6eeeb87a490a105cb39d05ccb7ddf80ed7a441e5bd3e5866c6f6ae8870cd723599e8
-  languageName: node
-  linkType: hard
-
-"@types/react-dom@npm:^18.0.0":
-  version: 18.2.15
-  resolution: "@types/react-dom@npm:18.2.15"
-  dependencies:
-    "@types/react": "*"
-  checksum: 70e86f15f69f89b8f179139ab2e8a8aa9765e742789f5dd5a46fec40d4300ada8fe3349cceda42b9964a018982d7ccb7d791b47f781966c992bfd37da909fbd3
   languageName: node
   linkType: hard
 
@@ -7960,14 +7941,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:>=16":
-  version: 18.2.38
-  resolution: "@types/react@npm:18.2.38"
+"@types/react@npm:*, @types/react@npm:18.2.39, @types/react@npm:>=16":
+  version: 18.2.39
+  resolution: "@types/react@npm:18.2.39"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 56edd4756081b677e38ee23ad6d340658c5e2468785cb20968318cec357e1ea7ccf3ecd9534981741192dd1b894200acfaf0f1551b4795c6077668f6afc19345
+  checksum: e91a5419d7615ab4fcaa7cb3ad2bd372093676e86c082748ab36ac394d3ed560070482d092a5488f74d6b1d913369e4dabf6eb287debed4d70cd3eb7dc135542
   languageName: node
   linkType: hard
 
@@ -12177,6 +12158,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"decamelize@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "decamelize@npm:6.0.0"
+  checksum: 689888f5ea39add843d79fb5a8d3bc1ce1df7583899bc7cef081c3deecd54758e24e8692f4c214e0ea6917742bb05ea1991e3e15c33031e7aa7b9041e8e8033a
+  languageName: node
+  linkType: hard
+
 "decimal.js@npm:^10.4.2":
   version: 10.4.3
   resolution: "decimal.js@npm:10.4.3"
@@ -12847,31 +12835,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"embla-carousel-react@npm:^8.0.0-rc14":
-  version: 8.0.0-rc14
-  resolution: "embla-carousel-react@npm:8.0.0-rc14"
+"embla-carousel-react@npm:^8.0.0-rc15":
+  version: 8.0.0-rc15
+  resolution: "embla-carousel-react@npm:8.0.0-rc15"
   dependencies:
-    embla-carousel: 8.0.0-rc14
-    embla-carousel-reactive-utils: 8.0.0-rc14
+    embla-carousel: 8.0.0-rc15
+    embla-carousel-reactive-utils: 8.0.0-rc15
   peerDependencies:
     react: ^16.8.0 || ^17.0.1 || ^18.0.0
-  checksum: 949e58997fd99524b9c68398d858f8652abc577b1e129a26b31c7aff33d240c1d41b3b9f13e0fee9320598f88d881413787754b5a6647f1e2f7f78f99fdb96c6
+  checksum: 9478bcbce6e38f7504a7419cc0e4b97e187ebb89f321e7ab9b928c617a34b54e5abbbf130485bebb0a26441acd39aa56424aadeae2a2f532f3e5b6011e220b6d
   languageName: node
   linkType: hard
 
-"embla-carousel-reactive-utils@npm:8.0.0-rc14":
-  version: 8.0.0-rc14
-  resolution: "embla-carousel-reactive-utils@npm:8.0.0-rc14"
+"embla-carousel-reactive-utils@npm:8.0.0-rc15":
+  version: 8.0.0-rc15
+  resolution: "embla-carousel-reactive-utils@npm:8.0.0-rc15"
   peerDependencies:
-    embla-carousel: 8.0.0-rc14
-  checksum: 3d8a7be7daf7f2042bb14dfa63bd32e6c154ebecc94e8ed8b4856f9c3ad59a6aa77aab4d5ddda1e6becb8c8467339f5a6a62ebe5f6e495ab79f268edaad5b3b9
+    embla-carousel: 8.0.0-rc15
+  checksum: 0132665448077db2b01414dcdcb234323eabb6c247677bf9f2fa99d96b2b0673ed3e458f85691f3f1edf382cb8e819508920788fdb1dc49ca4d117771d0f3e79
   languageName: node
   linkType: hard
 
-"embla-carousel@npm:8.0.0-rc14":
-  version: 8.0.0-rc14
-  resolution: "embla-carousel@npm:8.0.0-rc14"
-  checksum: f8dcb810e43d2f898b60188648b7f23e1dd904b70d4935d067dde4a245ffc0527b793ddb4c744342c0268ad43ca6ca627619ced506d5fe08f27cdc34963b0b03
+"embla-carousel@npm:8.0.0-rc15":
+  version: 8.0.0-rc15
+  resolution: "embla-carousel@npm:8.0.0-rc15"
+  checksum: 277e57a93c446330d7e6745bef89f5359348ac7e13262c7b7517865bc7cd9984210a8a9773ffa79ffeefd7a5a2266f86ad431094f7e1c427ae8e2149021ea51b
   languageName: node
   linkType: hard
 
@@ -15719,6 +15707,15 @@ __metadata:
   dependencies:
     decamelize: ^2.0.0
   checksum: a0ed69264b5069137afb369b46e18e8dbeb67edc7fb2ad1de18554108943e2fc59155f898013fb7a2f03522879adad7c9a93f1c88428844bcbee006c98db8f0a
+  languageName: node
+  linkType: hard
+
+"humanize-string@npm:3.0.0":
+  version: 3.0.0
+  resolution: "humanize-string@npm:3.0.0"
+  dependencies:
+    decamelize: ^6.0.0
+  checksum: 700d337913151a2f96949aa7d6afda7ab8254e4fd8790f79255ddd90dc53d49d6bd45ece122afbf310f9ec6bae11d3c6ca8b1fcd9220eb310f337254e27baf07
   languageName: node
   linkType: hard
 
@@ -25026,7 +25023,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@g-loot/react-tournament-brackets": ^1.0.30
     "@mantine/carousel": ^7.2.2
     "@mantine/core": ^7.2.2
     "@mantine/dates": ^7.2.2
@@ -25043,12 +25039,12 @@ __metadata:
     "@redwoodjs/web": 6.4.0
     "@rollup/pluginutils": ^5.0.5
     "@tabler/icons-react": ^2.42.0
-    "@types/react": 18.2.14
-    "@types/react-dom": 18.2.6
+    "@types/react": 18.2.39
+    "@types/react-dom": 18.2.17
     autoprefixer: ^10.4.16
     dayjs: ^1.11.10
-    embla-carousel-react: ^8.0.0-rc14
-    humanize-string: 2.1.0
+    embla-carousel-react: ^8.0.0-rc15
+    humanize-string: 3.0.0
     postcss: ^8.4.31
     postcss-loader: ^7.3.3
     postcss-preset-mantine: ^1.11.0

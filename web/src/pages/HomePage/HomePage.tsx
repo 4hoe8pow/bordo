@@ -1,4 +1,4 @@
-import { Card, Text, Metric } from '@tremor/react'
+import { Button } from '@mantine/core'
 
 import { MetaTags } from '@redwoodjs/web'
 
@@ -7,11 +7,8 @@ const HomePage = () => {
     <>
       <MetaTags title="Home" description="Home page" />
 
-      <h1 className="text-red">HomePage</h1>
-      <Card className="mx-auto max-w-xs">
-        <Text>Sales</Text>
-        <Metric>$ 34,743</Metric>
-      </Card>
+      <h1 className="text-red-500">HomePage</h1>
+      <Button>test</Button>
     </>
   )
 }

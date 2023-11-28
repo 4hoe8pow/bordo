@@ -1,3 +1,0 @@
-[workspace]
-members = ["./web/lib/aogiri"]
-resolver = "2"
